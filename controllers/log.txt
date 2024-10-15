@@ -1,0 +1,55 @@
+Formulaire soumis.
+Données reçues : flavor_id=2, size=500ml, stock=4
+Ajout d'une nouvelle glace : flavor_id=2, size=500ml, stock=4
+Formulaire soumis.
+Données reçues : flavor_id=9, size=1L, stock=3
+Ajout d'une nouvelle glace : flavor_id=9, size=1L, stock=3
+Formulaire soumis.
+Données reçues : flavor_id=2, size=500ml, stock=2
+Mise à jour de la glace avec ID : 9 à nouveau stock : 6
+Formulaire soumis.
+Données reçues : flavor_id=2, size=1L, stock=1
+Ajout d'une nouvelle glace : flavor_id=2, size=1L, stock=1
+Erreur : ice_cream_id 12 n'existe pas dans la table ice_creams.
+Erreur : ice_cream_id 16 n'existe pas dans la table ice_creams.
+Article ajouté avec ice_cream_id = 1 et quantité = 5
+Article ajouté avec ice_cream_id = 10 et quantité = 52
+Erreur : ice_cream_id 12 n'existe pas dans la table ice_creams.
+Erreur : ice_cream_id 13 n'existe pas dans la table ice_creams.
+Erreur : ice_cream_id 22 n'existe pas dans la table ice_creams.
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Mise à jour de la glace avec ID : 8 à nouveau stock : 13
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=1L, stock=7
+Ajout d'une nouvelle glace : flavor_id=1, size=1L, stock=7
+Formulaire soumis.
+Données reçues : flavor_id=3, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=3, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=7, size=500ml, stock=2
+Ajout d'une nouvelle glace : flavor_id=7, size=500ml, stock=2
+Formulaire soumis.
+Données reçues : flavor_id=14, size=500ml, stock=3
+Ajout d'une nouvelle glace : flavor_id=14, size=500ml, stock=3
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=1
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=1
+Formulaire soumis.
+Données reçues : flavor_id=2, size=1L, stock=2
+Ajout d'une nouvelle glace : flavor_id=2, size=1L, stock=2
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=2
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=2
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=1
+Mise à jour de la glace avec ID : 20 à nouveau stock : 3
+Formulaire soumis.
+Données reçues : flavor_id=8, size=1L, stock=5
+Ajout d'une nouvelle glace : flavor_id=8, size=1L, stock=5
