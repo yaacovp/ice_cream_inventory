@@ -18,7 +18,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!-- Bouton pour ajouter une nouvelle commande -->
 <form action="index.php" method="GET" style="display:inline;">
     <input type="hidden" name="page" value="add_order">
-    <button type="submit" class="btn btn-add">Ajouter une nouvelle commande</button>
+    <button type="submit" class="btn btn-add" style="margin-bottom:10px;">Ajouter une nouvelle commande</button>
 </form>
 
 <table>
