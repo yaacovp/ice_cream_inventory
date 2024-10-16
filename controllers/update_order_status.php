@@ -11,19 +11,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$status, $order_id]);
 
     if ($status == 'Terminée') {
-        // Mettre à jour le stock des glaces en fonction des articles de commande
-        $stmt = $pdo->prepare("SELECT flavor_id, quantity FROM order_items WHERE order_id = ?");
+        // Récupérer les articles de la commande
+        $stmt = $pdo->prepare("SELECT flavor_id, size, quantity FROM order_items WHERE order_id = ?");
         $stmt->execute([$order_id]);
         $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        // Mettre à jour le stock des glaces pour chaque article de la commande
         foreach ($items as $item) {
-            $stmt = $pdo->prepare("UPDATE ice_creams SET stock = stock - ? WHERE flavor_id = ?");
-            $stmt->execute([$item['quantity'], $item['flavor_id']]);
+            // Déduire la quantité commandée du stock de chaque glace
+            $stmt = $pdo->prepare("UPDATE ice_creams SET stock = stock - ? WHERE flavor_id = ? AND size = ?");
+            $stmt->execute([$item['quantity'], $item['flavor_id'], $item['size']]);
         }
+
+        // Supprimer les articles de la commande
+        $stmt = $pdo->prepare("DELETE FROM order_items WHERE order_id = ?");
+        $stmt->execute([$order_id]);
+
+        // Supprimer la commande elle-même
+        $stmt = $pdo->prepare("DELETE FROM orders WHERE id = ?");
+        $stmt->execute([$order_id]);
     }
 
     // Redirection après traitement
     header('Location: ../index.php?page=orders');
     exit();
 }
-?>

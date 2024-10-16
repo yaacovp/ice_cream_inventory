@@ -49,4 +49,8 @@ $order_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </table>
 
-<a href="index.php?page=orders">Retour à la liste des commandes</a>
+<form action="index.php" method="GET" style="display:inline;">
+    <input type="hidden" name="page" value="orders">
+    <button type="submit" class="btn btn-back">Retour à la liste des commandes</button>
+</form>
+

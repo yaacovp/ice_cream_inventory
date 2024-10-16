@@ -3,7 +3,7 @@
 <?php
 // Requête pour récupérer les commandes en cours et le stock
 $stmt = $pdo->query("
-    SELECT f.name AS flavor, oi.size, SUM(oi.quantity) AS total_quantity, 
+    SELECT f.id AS flavor_id, f.name AS flavor, oi.size, SUM(oi.quantity) AS total_quantity, 
            COALESCE(ic.stock, 0) AS stock_available
     FROM order_items oi
     JOIN flavors f ON oi.flavor_id = f.id
@@ -20,6 +20,7 @@ $synthesis = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <th>Goût</th>
         <th>Litrage</th>
         <th>Quantité à Préparer (pots)</th>
+        <th>Actions</th>
     </tr>
     <?php foreach ($synthesis as $item): ?>
         <?php
@@ -31,6 +32,14 @@ $synthesis = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= htmlspecialchars($item['flavor']) ?></td>
             <td><?= htmlspecialchars($item['size']) ?></td>
             <td><?= htmlspecialchars($to_prepare) ?></td>
+            <td>
+                <form action="/ice_cream_inventory/controllers/prepare_ice_cream.php" method="POST">
+                    <input type="hidden" name="flavor_id" value="<?= htmlspecialchars($item['flavor_id']) ?>">
+                    <input type="hidden" name="size" value="<?= htmlspecialchars($item['size']) ?>">
+                    <input type="hidden" name="quantity" value="<?= htmlspecialchars($to_prepare) ?>">
+                    <button type="submit" class="btn btn-success">Fait</button>
+                </form>
+            </td>
         </tr>
         <?php endif; ?>
     <?php endforeach; ?>
