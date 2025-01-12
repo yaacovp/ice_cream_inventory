@@ -74,3 +74,75 @@ Ajout d'une nouvelle glace : flavor_id=1, size=1L, stock=2
 Formulaire soumis.
 Données reçues : flavor_id=2, size=500ml, stock=3
 Ajout d'une nouvelle glace : flavor_id=2, size=500ml, stock=3
+Formulaire soumis.
+Données reçues : flavor_id=7, size=1L, stock=2
+Ajout d'une nouvelle glace : flavor_id=7, size=1L, stock=2
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=2
+Mise à jour de la glace avec ID : 29 à nouveau stock : 7
+Formulaire soumis.
+Données reçues : flavor_id=4, size=1L, stock=4
+Ajout d'une nouvelle glace : flavor_id=4, size=1L, stock=4
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=2
+Mise à jour de la glace avec ID : 38 à nouveau stock : 2
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Mise à jour de la glace avec ID : 38 à nouveau stock : 7
+Formulaire soumis.
+Données reçues : flavor_id=2, size=500ml, stock=2
+Ajout d'une nouvelle glace : flavor_id=2, size=500ml, stock=2
+Formulaire soumis.
+Données reçues : flavor_id=10, size=1L, stock=5
+Ajout d'une nouvelle glace : flavor_id=10, size=1L, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=16, size=500ml, stock=3
+Ajout d'une nouvelle glace : flavor_id=16, size=500ml, stock=3
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=1L, stock=2
+Mise à jour de la glace avec ID : 40 à nouveau stock : 2
+Formulaire soumis.
+Données reçues : flavor_id=2, size=500ml, stock=3
+Ajout d'une nouvelle glace : flavor_id=2, size=500ml, stock=3
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Mise à jour de la glace avec ID : 48 à nouveau stock : 5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Mise à jour de la glace avec ID : 48 à nouveau stock : 5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Ajout d'une nouvelle glace : flavor_id=1, size=500ml, stock=5
+Formulaire soumis.
+Données reçues : flavor_id=1, size=1L, stock=10
+Ajout d'une nouvelle glace : flavor_id=1, size=1L, stock=10
+Formulaire soumis.
+Données reçues : flavor_id=1, size=500ml, stock=5
+Mise à jour de la glace avec ID : 52 à nouveau stock : 5
+Formulaire soumis.
+Données reçues : flavor_id=2, size=500ml, stock=4
+Ajout d'une nouvelle glace : flavor_id=2, size=500ml, stock=4

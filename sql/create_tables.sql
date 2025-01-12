@@ -41,3 +41,13 @@ CREATE TABLE order_items (
     FOREIGN KEY (order_id) REFERENCES orders(id),
     FOREIGN KEY (ice_cream_id) REFERENCES ice_creams(id)
 );
+
+-- Ajouter la table synthesis
+CREATE TABLE synthesis (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    flavor_id INT NOT NULL,
+    size ENUM('500ml', '1L') NOT NULL,
+    quantity INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (flavor_id) REFERENCES flavors(id)
+);

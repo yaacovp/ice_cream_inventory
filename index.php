@@ -27,6 +27,10 @@ switch ($page) {
     case 'synthesis':
         include 'views/synthesis.php';
         break;
+    case 'home':  // Ajout de la page d'accueil
+        include 'controllers/home.php';
+        include 'views/home.php';
+        break;
     default:
         echo '<h2>Bienvenue dans l\'application de gestion de stock de glaces !</h2>';
         break;

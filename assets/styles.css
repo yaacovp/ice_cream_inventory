@@ -165,6 +165,29 @@ footer {
     opacity: 0.8;
 }
 
+/* Conteneur pour les graphiques en mode flex */
+.graph-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.graph-container canvas {
+    width: 45% !important; /* Chaque graphique prend environ 45% de la largeur */
+    height: auto !important; /* Ajustement automatique de la hauteur */
+}
+
+/* Styles pour le tableau des glaces en stock et le tableau des glaces réservées */
+.table-section {
+    margin-bottom: 20px;
+}
+
+.table-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
 
 /* Styles responsifs */
 
@@ -175,41 +198,13 @@ footer {
         margin: 10px 0;
     }
 
-    table, thead, tbody, th, td, tr {
-        display: block;
+    .graph-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    table tr {
-        margin-bottom: 15px;
-    }
-
-    table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
-
-    table td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: 50%;
-        padding-right: 10px;
-        text-align: left;
-        font-weight: bold;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    form {
-        width: 95%;
-        margin: 20px auto;
-    }
-
-    input, select, button {
-        width: 100%;
+    .graph-container canvas {
+        width: 90% !important; /* Utilise 90% de la largeur sur les petits écrans */
     }
 }
 
@@ -218,6 +213,21 @@ footer {
     button[type="button"], form button {
         font-size: 14px;
         padding: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    th, td {
+        width: 48%;
+        text-align: left;
     }
 
     .order-item label,
@@ -234,5 +244,18 @@ footer {
 
     h2 {
         font-size: 1.2rem;
+    }
+
+    /* Styles spécifiques pour aligner les en-têtes et les colonnes sur téléphones */
+    table tr {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    th, td {
+        width: 48%;
+        box-sizing: border-box;
+        text-align: left;
     }
 }
