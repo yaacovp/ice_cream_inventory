@@ -189,6 +189,47 @@ footer {
     margin-bottom: 10px;
 }
 
+.low-stocks {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.low-stocks h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.low-stocks table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.low-stocks table, .low-stocks th, .low-stocks td {
+    border: 1px solid #ddd;
+}
+
+.low-stocks th, .low-stocks td {
+    padding: 10px;
+    text-align: left;
+}
+
+.low-stocks tr {
+    font-weight: bold;
+}
+
+.low-stocks tr td {
+    font-weight: normal;
+}
+
+.low-stocks tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+
 /* Styles responsifs */
 
 /* Pour les écrans de taille inférieure à 768px (tablettes) */
