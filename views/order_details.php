@@ -1,6 +1,8 @@
 <!-- views/order_details.php -->
-
 <?php
+// Inclure la connexion à la base de données
+include __DIR__ . '/../db.php';
+
 // Récupérer les informations de la commande
 $order_id = $_GET['order_id'];
 
@@ -25,32 +27,80 @@ $stmt = $pdo->prepare("
 $stmt->execute([$order_id]);
 $order_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// Fonction pour convertir le statut en classe CSS
+function getStatusClass($status) {
+    $status_lower = strtolower(str_replace(['é', 'è', ' '], ['e', 'e', '-'], $status));
+    return $status_lower;
+}
+
+// Fonction pour formater la date
+function formatDateDetailed($dateString) {
+    $date = new DateTime($dateString);
+    return $date->format('d/m/Y à H:i');
+}
+
+$statusClass = getStatusClass($order['status']);
+$formattedDate = formatDateDetailed($order['created_at']);
 ?>
 
-<h2>Détails de la Commande #<?= htmlspecialchars($order['id']) ?></h2>
-<p><strong>Client :</strong> <?= htmlspecialchars($order['name']) ?></p>
-<p><strong>Date :</strong> <?= htmlspecialchars($order['created_at']) ?></p>
-<p><strong>Statut :</strong> <?= htmlspecialchars($order['status']) ?></p>
-
-<h3>Articles de la Commande</h3>
-<table>
-    <tr>
-        <th>Goût</th>
-        <th>Litrage</th>
-        <th>Quantité</th>
-    </tr>
-    <?php foreach ($order_items as $item): ?>
-    <tr>
-        <td><?= htmlspecialchars($item['flavor_name']) ?></td>  <!-- Utiliser 'flavor_name' pour le goût -->
-        <td><?= htmlspecialchars($item['size']) ?></td>         <!-- Utiliser 'size' pour le litrage -->
-        <td><?= htmlspecialchars($item['quantity']) ?></td>
-    </tr>
-<?php endforeach; ?>
-
-</table>
-
-<form action="index.php" method="GET" style="display:inline;">
-    <input type="hidden" name="page" value="orders">
-    <button type="submit" class="btn btn-back">Retour à la liste des commandes</button>
-</form>
-
+<div class="order-details-container">
+    <div class="order-details-card">
+        <!-- Header avec titre et statut -->
+        <div class="order-details-header">
+            <h2 class="order-details-title">Détails de la Commande #<?php echo htmlspecialchars($order['id']); ?></h2>
+            <span class="order-status-badge <?php echo $statusClass; ?>">
+                <?php echo htmlspecialchars($order['status']); ?>
+            </span>
+        </div>
+        
+        <!-- Corps des détails -->
+        <div class="order-details-body">
+            <!-- Section informations générales -->
+            <div class="order-info-section">
+                <div class="order-info-grid">
+                    <div class="info-card">
+                        <div class="info-card-label">Client</div>
+                        <div class="info-card-value"><?php echo htmlspecialchars($order['name']); ?></div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-label">Date de création</div>
+                        <div class="info-card-value"><?php echo $formattedDate; ?></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section articles -->
+            <h3 class="section-title">Articles de la Commande</h3>
+            <div class="articles-table-container">
+                <table class="articles-table">
+                    <thead>
+                        <tr>
+                            <th>Goût</th>
+                            <th>Litrage</th>
+                            <th>Quantité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($order_items as $item): ?>
+                        <tr>
+                            <td data-label="Goût"><?php echo htmlspecialchars($item['flavor_name']); ?></td>
+                            <td data-label="Litrage"><?php echo htmlspecialchars($item['size']); ?></td>
+                            <td data-label="Quantité">
+                                <span class="quantity-badge"><?php echo htmlspecialchars($item['quantity']); ?></span>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Bouton de retour -->
+        <div class="back-button-container">
+            <form action="index.php" method="GET" style="display:inline; width: 100%;">
+                <input type="hidden" name="page" value="orders">
+                <button type="submit" class="back-button">Retour à la liste des commandes</button>
+            </form>
+        </div>
+    </div>
+</div>
